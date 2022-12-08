@@ -1,13 +1,11 @@
 import os
-from Task1 import round_pi
-from Task2 import Multiplier
-import Task3
+import Task1, Task2, Task3, Task4, Task5
 Task = 0
 List1 = ['1. Число "пи" с заданной точностью d.',
          '2. Разбить число на множители.',
          '3. Ряд уникальных чисел из списка.',
-         '4. .',
-         '5. .',
+         '4. Запись многочлена в файл.',
+         '5. сумма двух многочленов в результирующий файл.',
          '6. Выход']
 os.system('cls')
 
@@ -36,16 +34,20 @@ def choice(x):
     if x <= len(List1):
         print("\033[33m{}".format(f'=================================================\n{List1[x-1]}\n================================================='))
     if x == 1:
-        printres(round_pi(str(inputdata('Введите число в формате 0.001, (с любым количеством знаков после запятой)'))))
+        printres(Task1.round_pi(str(inputdata('Введите число в формате 0.001, (с любым количеством знаков после запятой)'))))
         enter_key_to_continue()
     elif x == 2:
-        printres(Multiplier(int(inputdata('Введите целое число'))))
+        printres(Task2.Multiplier(int(inputdata('Введите целое число'))))
         enter_key_to_continue()
     elif x == 3:
         list1 = Task3.listgen(int(inputdata('Укажите размер генерируемого ряда чисел')))
         printres(f'исходный ряд чисел: {list1}\n    результат: {Task3.uniquelist(list1)}')
         enter_key_to_continue()
     elif x == 4:
+        pol = Task4.polinom_gen(int(inputdata('Введите степень "k" (целое число)')))
+        # записать певый файл для следующего задания
+        Task4.save_to_file(pol, str(inputdata('Введите название файла)')))
+        printres(f'Был сгенерирован многочлен, ({pol}) и записан в файл.')
         enter_key_to_continue()
     elif x == 5:
         enter_key_to_continue()
