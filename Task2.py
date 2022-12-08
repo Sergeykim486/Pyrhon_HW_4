@@ -4,7 +4,6 @@
 
 def Multiplier(n):
     an = []
-    
     i = 2
     while n > 1:
         while n % i == 0:
@@ -21,7 +20,4 @@ def Multiplier(n):
         if find == 0:
             result.append(j)
     
-    return an
-
-n = input('Введите число n ->  ')
-print(Multiplier(int(n)))
+    return result
