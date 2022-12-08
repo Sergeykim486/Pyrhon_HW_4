@@ -45,11 +45,12 @@ def choice(x):
         enter_key_to_continue()
     elif x == 4:
         pol = Task4.polinom_gen(int(inputdata('Введите степень "k" (целое число)')))
-        # записать певый файл для следующего задания
         Task4.save_to_file(pol, str(inputdata('Введите название файла)')))
         printres(f'Был сгенерирован многочлен, ({pol}) и записан в файл.')
         enter_key_to_continue()
     elif x == 5:
+        res = Task5.sum_of_pol()
+        printres(f'Сумма многочленов:\n        {res[0]}\n        {res[1]}].\n    равна: {res[2]}')
         enter_key_to_continue()
     elif x == 6:
         os.system('cls')
